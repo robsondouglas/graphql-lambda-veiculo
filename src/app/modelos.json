@@ -1,0 +1,569 @@
+{
+    "fabricantes": [
+        {
+            "Id": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "BMW"
+        },
+        {
+            "Id": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Chevrolet"
+        },
+        {
+            "Id": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Fiat"
+        },
+        {
+            "Id": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Ford"
+        },
+        {
+            "Id": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "Honda"
+        },
+        {
+            "Id": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "Hyundai"
+        },
+        {
+            "Id": "0bfc4b3d2ecfc06a969811c77066224e",
+            "Nome": "Jeep"
+        },
+        {
+            "Id": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "Mercedes-Benz"
+        },
+        {
+            "Id": "c5ba5e684acec17a51c2e572512ac58b",
+            "Nome": "Nissan"
+        },
+        {
+            "Id": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Renault"
+        },
+        {
+            "Id": "53092a17afa460689ca931f0d459e399",
+            "Nome": "Toyota"
+        },
+        {
+            "Id": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Volkswagen"
+        }
+    ],
+    "modelos": [
+        {
+            "Id": "f7591a779adc8af5c021be754564532a",
+            "IdFabricante": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "Accord"
+        },
+        {
+            "Id": "d2d6270d2fe0f7f570ff0a2a7a416490",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Amarok"
+        },
+        {
+            "Id": "2fd67528407e788d0f37c4f5559c8861",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Argo"
+        },
+        {
+            "Id": "99e4886e208c91f0f5dce1cfb86b2bf7",
+            "IdFabricante": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "CR-V"
+        },
+        {
+            "Id": "85682175252cc481be15e143fbc22025",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "Camry"
+        },
+        {
+            "Id": "30a844fbb71838e70d218aae3ce97e16",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Captur"
+        },
+        {
+            "Id": "5e18a6d56d5a3e4405a18efdfadf307e",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Celta"
+        },
+        {
+            "Id": "c4a6d4584b33b0eac595ca9b8eb5084d",
+            "IdFabricante": "0bfc4b3d2ecfc06a969811c77066224e",
+            "Nome": "Cherokee"
+        },
+        {
+            "Id": "85daa1e1e8943d3267623c24b38acc91",
+            "IdFabricante": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "City"
+        },
+        {
+            "Id": "e922a139d652d6d682182dea7b90626a",
+            "IdFabricante": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "Civic"
+        },
+        {
+            "Id": "4604802c857b7098f7fdc45f241254f7",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "Classe A"
+        },
+        {
+            "Id": "768002bfd86e2d4a360fb1efc7ed40d8",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "Classe C"
+        },
+        {
+            "Id": "b974f3a42bfc8da842ad86cf1b4388d7",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "Classe E"
+        },
+        {
+            "Id": "eed8d8f0723e4c338e4f3c8a8ab1c5ea",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "Classe S"
+        },
+        {
+            "Id": "1687fd18b193141e965812faaddadf55",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Classic"
+        },
+        {
+            "Id": "4aab39960d0e9130180f2985b3379e5c",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Clio"
+        },
+        {
+            "Id": "7b28a4b32e029fcd628a5e41d3b3fa4a",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Cobalt"
+        },
+        {
+            "Id": "4f75f31a22a6ae5c1622195d238272be",
+            "IdFabricante": "0bfc4b3d2ecfc06a969811c77066224e",
+            "Nome": "Compass"
+        },
+        {
+            "Id": "662434551be9ea9fa907463279e90de4",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "Corolla"
+        },
+        {
+            "Id": "de65ea9c3e89a2d9406e3c20086417c9",
+            "IdFabricante": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "Creta"
+        },
+        {
+            "Id": "ff0c3a4fbae782e204cfd5dfb95c30ba",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Cronos"
+        },
+        {
+            "Id": "e36ee9fb51e14491ab97892014ce9530",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Cruze"
+        },
+        {
+            "Id": "b19dc9d5a4b0b5ac2bc612c0bf1c3d86",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Doblò"
+        },
+        {
+            "Id": "f9810136ae5a958d06f603c05ef8476f",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Duster"
+        },
+        {
+            "Id": "de357fce318b126d67b2bb086d9f33aa",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "EcoSport"
+        },
+        {
+            "Id": "58dd9585cab49ffe7eed82aaaccff7f4",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Edge"
+        },
+        {
+            "Id": "6128b6977655171414f052da8a36c9b3",
+            "IdFabricante": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "Elantra"
+        },
+        {
+            "Id": "c5f27673e836e53f17cc6f605dd57acb",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Equinox"
+        },
+        {
+            "Id": "72ad6ec67ac5685672614aecf0cf546d",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "Etios"
+        },
+        {
+            "Id": "f41d74eb5dbf353fffcf4736bf0315b6",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "F-250"
+        },
+        {
+            "Id": "86e35a64c2fc1084e79805d3f0d179e0",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Fiesta"
+        },
+        {
+            "Id": "24fa942102ed34a53e16005f10bfe341",
+            "IdFabricante": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "Fit"
+        },
+        {
+            "Id": "9ce5e5052a77f2d1b749d1a62baaf46f",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Fluence"
+        },
+        {
+            "Id": "30f1999ae6f132e7d992e1845135c10b",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Focus"
+        },
+        {
+            "Id": "0022b6b367d9942cf2192edb7965daf0",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Fox"
+        },
+        {
+            "Id": "a58490d9d82a3fca323a46a3530db61d",
+            "IdFabricante": "c5ba5e684acec17a51c2e572512ac58b",
+            "Nome": "Frontier"
+        },
+        {
+            "Id": "9cab937d4e696719672f353aaafa6fd8",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Fusion"
+        },
+        {
+            "Id": "812afd1a0c898a8b01d9ac5b2b25c429",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "GLA"
+        },
+        {
+            "Id": "eff0cc0d5c4beface55ff79026c4368e",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "GLC"
+        },
+        {
+            "Id": "8418f8576474c1c101d4f64e0e3697de",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "GLE"
+        },
+        {
+            "Id": "68ec11c9580d1c163babd6fc2eddb823",
+            "IdFabricante": "be956e74642d5b18c6a4864aad39f494",
+            "Nome": "GLS"
+        },
+        {
+            "Id": "b74221b86722857049d4e73f0bf2c7f4",
+            "IdFabricante": "c5ba5e684acec17a51c2e572512ac58b",
+            "Nome": "GT-R"
+        },
+        {
+            "Id": "76c89bf534031f09902a09c782023e41",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Gol"
+        },
+        {
+            "Id": "6bad40de86914b5e2f41473856db8469",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Golf"
+        },
+        {
+            "Id": "fb9fc30ef834a76efa964c6b64a722e6",
+            "IdFabricante": "0bfc4b3d2ecfc06a969811c77066224e",
+            "Nome": "Grand Cherokee"
+        },
+        {
+            "Id": "0db266756c62cad356d35c392dbaa189",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Grand Siena"
+        },
+        {
+            "Id": "093a0123b7c912d34a9f6c13d955272b",
+            "IdFabricante": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "HB20"
+        },
+        {
+            "Id": "331b5d325733292fff1ee1cebcd8c0cf",
+            "IdFabricante": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "HR-V"
+        },
+        {
+            "Id": "22ea432837ac36b78975364d7f7871ef",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "Hilux"
+        },
+        {
+            "Id": "f3245e30336dbec3e2db020489bf95f4",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Jetta"
+        },
+        {
+            "Id": "77359221978d235bd1237eb1353e0e5f",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Ka"
+        },
+        {
+            "Id": "7079e59f9a5573aeaa5ef82d5d891a44",
+            "IdFabricante": "c5ba5e684acec17a51c2e572512ac58b",
+            "Nome": "Kicks"
+        },
+        {
+            "Id": "45f0196f5daad0b4d74d98a4af6252e9",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Kwid"
+        },
+        {
+            "Id": "a569dc0fb436baf29bd48d29171e0eb0",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Linea"
+        },
+        {
+            "Id": "bbec852f35407d8d573ef772111c9eef",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Logan"
+        },
+        {
+            "Id": "be4414c9fc72a20a7b889110f70a443b",
+            "IdFabricante": "c5ba5e684acec17a51c2e572512ac58b",
+            "Nome": "March"
+        },
+        {
+            "Id": "b2340d1a1c85ed95164c1fb15a1110e1",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Megane"
+        },
+        {
+            "Id": "42fce62e19d6d965fb7605fa99be79be",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Mobi"
+        },
+        {
+            "Id": "5396ae7f8429406a551e9ffb6c657f1c",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Mustang"
+        },
+        {
+            "Id": "641cc5a901602536909a616079b637c3",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Nivus"
+        },
+        {
+            "Id": "dcbd477a5efbba49eb813aa60997d91f",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Onix"
+        },
+        {
+            "Id": "ee18ff3e951d7a14e644fff21d21350b",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Oroch"
+        },
+        {
+            "Id": "d9ae5ca708aef76bf5c46a28c2de9bf8",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Palio"
+        },
+        {
+            "Id": "b879770889f7b882a26f5044e46a74f9",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Polo"
+        },
+        {
+            "Id": "89309bd80e9c5fbe5864209037e6690d",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Prisma"
+        },
+        {
+            "Id": "50cd56f449ef95964afaec08c34c2d72",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "Prius"
+        },
+        {
+            "Id": "6a9f79d1a1fc90080dd8b67cc9fa1329",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Punto"
+        },
+        {
+            "Id": "9d7e9295329738687159ccd031962cdb",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "RAV4"
+        },
+        {
+            "Id": "0db5beea64f89fe204aeadde42c2f1d4",
+            "IdFabricante": "01083da2df15d6ebfe62186418a76863",
+            "Nome": "Ranger"
+        },
+        {
+            "Id": "7f3c949c6d27e4f9437e5104329cac55",
+            "IdFabricante": "0bfc4b3d2ecfc06a969811c77066224e",
+            "Nome": "Renegade"
+        },
+        {
+            "Id": "6d6fbe8c129b16df63683c481477a35b",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "S10"
+        },
+        {
+            "Id": "855d3fb1b8c0725144d365fd7f79df9f",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "SW4"
+        },
+        {
+            "Id": "1508f420aa20d5a80c13022d6ca022be",
+            "IdFabricante": "8eb4a51cf2001d9f18027378ba1a6ec8",
+            "Nome": "Sandero"
+        },
+        {
+            "Id": "ae6e81accc9c80bfc7e2afb254926378",
+            "IdFabricante": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "Santa Fe"
+        },
+        {
+            "Id": "6130e0f4618c65cca4a695fb897bcdb5",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Saveiro"
+        },
+        {
+            "Id": "7bb91138ce2bfe7336cb5565695321f9",
+            "IdFabricante": "c5ba5e684acec17a51c2e572512ac58b",
+            "Nome": "Sentra"
+        },
+        {
+            "Id": "e6293376afa6cee4df284b6119d35206",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Siena"
+        },
+        {
+            "Id": "d11d0590b737a797b47d0ae31521df0d",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Sonic"
+        },
+        {
+            "Id": "c7888f8eb8064a1da3bb56221b85ad6a",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Spin"
+        },
+        {
+            "Id": "0c54c212b6168db81e0e2b6ed52c25fd",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Strada"
+        },
+        {
+            "Id": "733dd4d1b2d66dbc48de89a6a9c1f141",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "Série 1"
+        },
+        {
+            "Id": "de3ace6f3d424b2f025406c0e7ce98c9",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "Série 3"
+        },
+        {
+            "Id": "43b36ca8af82a3211533831aa6dfa582",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "Série 5"
+        },
+        {
+            "Id": "de9e9f1a8426441405e8f388082bd90a",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "T-Cross"
+        },
+        {
+            "Id": "8f6c119c2ac3dcf8fc5fed8b050d418a",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Tiguan"
+        },
+        {
+            "Id": "36b3bc49cc352407c5e32d5b4dbf9714",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Toro"
+        },
+        {
+            "Id": "e4396f144f03ee332f76f3a48e6846c8",
+            "IdFabricante": "b6f02cc209c38789488c61b67021cdc4",
+            "Nome": "Tracker"
+        },
+        {
+            "Id": "21d8e2708641db6eadc4d80c903a63c3",
+            "IdFabricante": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "Tucson"
+        },
+        {
+            "Id": "9aed5006767c945b18723916d891009d",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Uno"
+        },
+        {
+            "Id": "6a8499b1749add83889d34974e7101fc",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Up!"
+        },
+        {
+            "Id": "2577d16becd8722dcdf20c15bdc678e5",
+            "IdFabricante": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "Veloster"
+        },
+        {
+            "Id": "878933e8ecfd20d69cfa4f0067b47f58",
+            "IdFabricante": "c5ba5e684acec17a51c2e572512ac58b",
+            "Nome": "Versa"
+        },
+        {
+            "Id": "63c4a24d7e963bcc571d5e043840c309",
+            "IdFabricante": "bada04e2ca39adbbed49a99b45015f1c",
+            "Nome": "Voyage"
+        },
+        {
+            "Id": "e50032f48c57276d0c877382cd4ca809",
+            "IdFabricante": "844c56840b5fc26d414cf238381a5f1a",
+            "Nome": "WR-V"
+        },
+        {
+            "Id": "e371f2940125b9fc94380d0f6f8d914d",
+            "IdFabricante": "0bfc4b3d2ecfc06a969811c77066224e",
+            "Nome": "Wrangler"
+        },
+        {
+            "Id": "fb175f8f7544285e4d8d97c31ddc483e",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "X1"
+        },
+        {
+            "Id": "1281fa01e7000f1ce7159d95865e9fb9",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "X3"
+        },
+        {
+            "Id": "bd0bd43d69107165fa7cc9e49ff11861",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "X5"
+        },
+        {
+            "Id": "1e3350f1526b0d5962a7d4b7ea36b09b",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "X6"
+        },
+        {
+            "Id": "c643af333a117da8088d7247056e0c28",
+            "IdFabricante": "53092a17afa460689ca931f0d459e399",
+            "Nome": "Yaris"
+        },
+        {
+            "Id": "46904ff81eb67688f76505d12c57a1c4",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "i3"
+        },
+        {
+            "Id": "0eb1bd6e90300d389f82bbfa74355e0d",
+            "IdFabricante": "bcb48dddff8c14b5f452ee573b4db770",
+            "Nome": "i8"
+        },
+        {
+            "Id": "89a0cb31469ae05e62c974b0a9c5bbab",
+            "IdFabricante": "fb1939d8b52f6a7a04a68f75b4ceefe6",
+            "Nome": "ix35"
+        }
+    ]
+}

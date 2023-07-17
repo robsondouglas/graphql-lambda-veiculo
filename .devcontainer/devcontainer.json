@@ -1,0 +1,12 @@
+{
+    "name": "VEICULO",
+    "image": "node:16",
+	"postCreateCommand": "/bin/bash .devcontainer/install.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GraphQL.vscode-graphql-syntax"
+			]
+		}
+	}
+}

@@ -1,0 +1,50 @@
+[
+    {
+      "fabr": "Volkswagen",
+      "mod": ["Gol", "Fox", "Polo", "Voyage", "Up!", "Jetta", "Tiguan", "Saveiro", "Golf", "Amarok", "Nivus", "T-Cross"]
+    },
+    {
+      "fabr": "Fiat",
+      "mod": ["Uno", "Palio", "Siena", "Strada", "Punto", "Linea", "Toro", "Mobi", "Argo", "Cronos", "Doblò", "Grand Siena"]
+    },
+    {
+      "fabr": "Chevrolet",
+      "mod": ["Onix", "Prisma", "Cruze", "Spin", "Celta", "Classic", "Sonic", "Cobalt", "Tracker", "S10", "Equinox"]
+    },
+    {
+      "fabr": "Ford",
+      "mod": ["Ka", "Fiesta", "Focus", "EcoSport", "Fusion", "Ranger", "F-250", "Edge", "Mustang"]
+    },
+    {
+      "fabr": "Renault",
+      "mod": ["Sandero", "Logan", "Duster", "Kwid", "Captur", "Fluence", "Megane", "Oroch", "Clio"]
+    },
+    {
+      "fabr": "Honda",
+      "mod": ["Civic", "Fit", "HR-V", "City", "CR-V", "WR-V", "Accord"]
+    },
+    {
+      "fabr": "Toyota",
+      "mod": ["Corolla", "Etios", "Hilux", "Yaris", "RAV4", "SW4", "Camry", "Prius"]
+    },
+    {
+      "fabr": "Hyundai",
+      "mod": ["HB20", "Creta", "Tucson", "ix35", "Santa Fe", "Veloster", "Elantra"]
+    },
+    {
+      "fabr": "Nissan",
+      "mod": ["March", "Versa", "Sentra", "Kicks", "Frontier", "GT-R"]
+    },
+    {
+      "fabr": "Jeep",
+      "mod": ["Renegade", "Compass", "Cherokee", "Wrangler", "Grand Cherokee"]
+    },
+    {
+      "fabr": "Mercedes-Benz",
+      "mod": ["Classe A", "Classe C", "Classe E", "Classe S", "GLA", "GLC", "GLE", "GLS"]
+    },
+    {
+      "fabr": "BMW",
+      "mod": ["Série 1", "Série 3", "Série 5", "X1", "X3", "X5", "X6", "i3", "i8"]
+    }
+  ]

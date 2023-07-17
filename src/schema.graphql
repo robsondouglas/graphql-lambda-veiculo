@@ -1,0 +1,87 @@
+
+type Fabricante
+{
+    "Identificador do Fabricante"
+    Id:     ID!,
+    "Nome do Fabricante"
+    Nome:   String,
+    "Modelos do fabricante"
+    Modelos: [Modelo!]
+}
+
+type Modelo 
+{
+    "Identificador do Modelo"
+    Id:     ID!,
+    "Nome do Modelo"
+    Nome:   String,
+    "Referência ao fabricante"
+    Fabricante: Fabricante
+}
+
+type Veiculo
+{
+    "Placa do veículo"
+    Placa:          String!,
+    "Identificador do proprietário do veículo"
+    Proprietario:   Cidadao,
+    "Chassis do veículo"
+    Chassis:        String,
+    "Ano de fabricação"
+    Ano:            Int,
+    "Fabricante do veículo"
+    Fabricante:     Fabricante,
+    "Modelo do veículo"
+    Modelo:         Modelo,
+    "Cor predominante"
+    Cor:            String,
+}
+
+
+type Cidadao
+{
+    "Identificador do proprietário do veículo"
+    IdCidadao: String
+}
+
+type Query{
+    "Lista todos os fabricantes"
+    fabricantes: [Fabricante],
+    "Obtem os dados do fabricante"
+    fabricante(Id: String):  Fabricante,
+    
+    "Lista todos os modelos de um fabricante"
+    modelos(IdFabricante: String) : [Modelo],
+    "Obtem os dados de um modelo"
+    modelo(IdModelo: String) : Modelo,
+    
+    "Lista os veículos de um proprietário"
+    veiculos(IdProprietario: String): [Veiculo],
+    "Obtém os dados de um veículo pela placa"
+    veiculo(Placa: String): Veiculo 
+}
+
+type Mutation{
+    "Inclui um veículo"
+    addVeiculo(itm:VeiculoInput):Boolean,
+    "Remove um veículo"
+    delVeiculo(Placa:String):Boolean,
+}
+
+input VeiculoInput
+{
+    "Placa do carro padrão Brasil 3 letras ou Mercosul"
+    Placa:           String,
+    "Identificador do proprietário do veículo"
+    IdProprietario:  String,
+    "Chassis do veículo, string aleatória com 17 caracteres, sem validação de formato"
+    Chassis:         String,
+    "Ano de fabricação"
+    Ano:             Int,
+    "Identificador do Fabricante do veículo"
+    IdFabricante:    String,
+    "Modelo do veículo"
+    IdModelo:        String,
+    "Cor predominante"
+    Cor:             String,
+}
