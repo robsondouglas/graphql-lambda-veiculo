@@ -1,7 +1,7 @@
 import { AttributeValue, QueryCommand, ScanCommand } from '@aws-sdk/client-dynamodb';
 import { IPK, IFK, IKey, IData } from './models';
 import { MESSAGES } from '../../libs/messages';
-import { Base } from '../base';
+import { Base } from '../../libs/base';
 
 export class Veiculo extends Base<IKey, IData> {
     constructor() {
@@ -22,7 +22,8 @@ export class Veiculo extends Base<IKey, IData> {
             Chassis: { S: mdl.Chassis },
             IdFabricante: { S: mdl.IdFabricante },
             IdModelo: { S: mdl.IdModelo },
-            Cor: { S: mdl.Cor }
+            Cor: { S: mdl.Cor },
+            DateAdd: {N: (new Date()).valueOf().toString()}
         }
     }
 
@@ -34,7 +35,8 @@ export class Veiculo extends Base<IKey, IData> {
             Chassis: itm.Chassis.S,
             IdFabricante: itm.IdFabricante.S,
             IdModelo: itm.IdModelo.S,
-            Cor: itm.Cor.S
+            Cor: itm.Cor.S,
+            DateAdd: new Date(Number.parseFloat(itm.DateAdd.N))  
         }
     }
 
@@ -59,7 +61,7 @@ export class Veiculo extends Base<IKey, IData> {
 
         if(await this.find( itm )) { throw new Error(MESSAGES.VEICULO.PLATE_UNIQUE) }
 
-        await super._post(itm);
+        return await super._post(itm);
     }
 
     async del(pk: IKey) {

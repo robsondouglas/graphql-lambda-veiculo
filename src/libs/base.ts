@@ -26,15 +26,18 @@ export abstract class Base<TPK, TData>{
         return Item ? this.db2mdl(Item) : null;
     }
 
-    protected async _post(item:TData){  
+    protected async _post(item:TData){
+        const Item  = this.mdl2db(item);    
         await this.ddb().send( new PutItemCommand({
             TableName: this.tblName,
-            Item: this.mdl2db(item)
+            Item
         }));
+
+        return this.db2mdl(Item);
     }
 
     protected async _del (pk:TPK){
-        await this.ddb().send( new DeleteItemCommand({
+        return await this.ddb().send( new DeleteItemCommand({
             TableName: this.tblName,
             Key: this.pk2db(pk)                     
         }));

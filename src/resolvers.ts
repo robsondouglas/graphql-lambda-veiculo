@@ -1,41 +1,33 @@
 const resolvers = {
     Query: {
-        fabricantes: (_, __, { dataSources })             =>  dataSources.fabricante.list(),
-        fabricante:  (_, {Id}, { dataSources })           =>  dataSources.fabricante.get({Id}),
+        fabricantes: (_, {Nome}, { dataSources })           =>  dataSources.app.listFabricantes({Nome}),
+        fabricante:  (_, {Id}, { dataSources })             =>  dataSources.app.getFabricante({Id}),
         
-        modelos:     (_, {IdFabricante}, { dataSources }) =>  dataSources.modelo.list({IdFabricante}),
-        modelo:      (_, {Id}, { dataSources })           =>  dataSources.modelo.get({Id}),
+        modelos:     (_, {IdFabricante}, { dataSources })   =>  dataSources.app.listModelos({IdFabricante}),
+        modelo:      (_, {Id}, { dataSources })             =>  dataSources.app.getModelo({Id}),
 
-        veiculos:    (_, {IdProprietario}, { dataSources })      =>  dataSources.veiculo.list({IdProprietario}),
-        veiculo:     (_, {Placa}, { dataSources })        =>  dataSources.veiculo.find({Placa}),
+        veiculos:    (_, {IdProprietario}, { dataSources }) =>  dataSources.app.listVeiculos({IdProprietario}),
+        veiculo:     (_, {Placa}, { dataSources })          =>  dataSources.app.findVeiculo({Placa}),
     },
 
     Mutation: {
-        addVeiculo: (_, {itm}, { dataSources }) => dataSources.veiculo.post( itm ),
-        delVeiculo: (_, {key}, { dataSources }) => dataSources.veiculo.del( key ),        
+        addVeiculo: (_, {itm}, { dataSources, claims }) => dataSources.app.addVeiculo( {...itm, IdProprietario: claims.sub} ),
+        delVeiculo: (_, {Placa}, { dataSources }) => dataSources.app.delVeiculo( Placa ),        
     },
     Fabricante: {
-        __resolveReference: ({Id}, {dataSources})=> dataSources.fabricante.get({Id}),
-        Modelos: ({Id}, _, { dataSources }) =>  dataSources.modelo.list({Id}),
+        Modelos: ({Id}, _, { dataSources }) =>  dataSources.app.listModelos({Id}),
     },
     Modelo: {
-        __resolveReference: ({Id}, {dataSources})=> dataSources.modelo.get({Id}),
-        Fabricante: ({IdFabricante}, _, { dataSources }) =>  dataSources.modelo.get({IdFabricante}),
+        Fabricante: ({IdFabricante}, _, { dataSources }) =>  dataSources.app.getFabricante({Id: IdFabricante}),
     },
     Veiculo: {
-        __resolveReference: ({Placa}, {dataSources})=> dataSources.veiculo.find({Placa}),
-        Fabricante: ({IdFabricante}, _, { dataSources }) =>  dataSources.fabricante.get({Id: IdFabricante}),
-        Modelo: ({IdModelo}, _, { dataSources }) =>  dataSources.modelo.get({Id: IdModelo}),
+        Fabricante:     ({IdFabricante}, _, { dataSources }) =>  dataSources.app.getFabricante({Id: IdFabricante}),
+        Modelo:         ({IdModelo},     _, { dataSources }) =>  dataSources.app.getModelo({Id: IdModelo}),
+        Proprietario:   ({IdProprietario})                   =>  ({__typename: "Cidadao", IdCidadao: IdProprietario}),
     },
-    Cidadao: {
-     __resolveReference(referencedLocation) {
-        return referencedLocation;
-        },
-
-        //Veiculos:    (_, {Id}, { dataSources })      =>  dataSources.veiculo.list({IdProprietario: Id}),
-        
+    Cidadao: {  
+        Veiculos:    ({IdCidadao}, _, { dataSources }) => dataSources.app.listVeiculos({IdProprietario: IdCidadao}),
     }
-    
 
 }
 

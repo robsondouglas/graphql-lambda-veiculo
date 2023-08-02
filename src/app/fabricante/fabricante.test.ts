@@ -7,6 +7,6 @@ describe('FABRICANTE',()=>{
     })
 
     it('list', async()=>{
-        expect(fab.list()).resolves.toHaveLength(12);
+        expect(fab.list({Nome: ''})).resolves.toHaveLength(12);
     })
 })

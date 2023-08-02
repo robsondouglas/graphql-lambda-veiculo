@@ -381,6 +381,11 @@
             "Nome": "Prius"
         },
         {
+            "Id": "6a9f79d1a1fc90080dd8b67cc9fa1330",
+            "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
+            "Nome": "Pulse"
+        },
+        {
             "Id": "6a9f79d1a1fc90080dd8b67cc9fa1329",
             "IdFabricante": "c880cb1cae118d61486764f1f4a7e1e5",
             "Nome": "Punto"

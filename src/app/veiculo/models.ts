@@ -12,9 +12,10 @@ export interface IKey extends IPK, IFK{
 }
 
 export interface IData extends IPK, IFK{
-    Chassis:    string,
-    Ano:        number,
+    Chassis:      string,
+    Ano:          number,
     IdFabricante: string,
     IdModelo:     string,
-    Cor:        string,
+    Cor:          string,
+    DateAdd?:      Date
 }

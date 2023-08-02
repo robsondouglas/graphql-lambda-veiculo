@@ -6,9 +6,6 @@ import { mask2String } from "../../libs/utils";
 
 describe('VEICULO', ()=>{
     const veiculo = new Veiculo();
-    
-    
-    
 
     const mockData = (owner:string) : IData => ({
         Placa: mask2String('@@@#?##'),

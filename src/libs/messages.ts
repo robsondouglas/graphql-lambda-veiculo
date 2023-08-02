@@ -1,4 +1,10 @@
 export const MESSAGES = {
+    FABRICANTE: {
+        NOT_FOUND: 'Fabricante não encontrado',
+    },
+    MODELO: {
+        NOT_FOUND: 'Modelo não encontrado',
+    },
     VEICULO: {
         OWNER_REQUIRED: 'O Id do proprietário deve ser preenchido',
         PLATE_REQUIRED: 'A placa deve ser preenchida',

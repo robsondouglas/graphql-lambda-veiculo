@@ -1,6 +1,4 @@
 declare module '*.graphql' {
-    import { DocumentNode } from 'graphql'
-    const Schema: DocumentNode
-  
-    export = Schema
-  }
+  const ql: string;
+  export default ql;
+}

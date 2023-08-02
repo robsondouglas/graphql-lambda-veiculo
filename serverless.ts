@@ -1,5 +1,5 @@
 import type { AWS } from '@serverless/typescript';
-import { graphqlHandler } from './src/index';
+import { graphqlHandler, restHandler, authMiddleware } from './src/index';
 
 const args = (key:string, defaultValue:string) =>  {
   const idx = process.argv.findIndex(f=>f.startsWith(`--${key}`))
@@ -12,26 +12,46 @@ const args = (key:string, defaultValue:string) =>  {
   }
 }
 
-const stage =  args('stage', 'dev');
-const projectName = 'veiculo'
+const accountId = 813397945060;
+const service   = {alias: "VEI", name: 'Veiculo' }
+const stage     =  args('stage', 'dev').toUpperCase();
+const region    = "sa-east-1";
+const cognitoPoolId = 'sa-east-1_28VaLNwAP';
 
-const tables = {
-  Veiculo: {key: 'tblVeiculo', name: `VEI_VEICULO_${stage}`},
+const tables    =   {
+  Veiculo: {key: 'tblVeiculo', name: `${service.alias}_VEICULO_TBL_${stage}`, index: ['_GSI1']},
 };
 
+const topics = {
+  Veiculo: {key: 'topVeiculo', name: `${service.alias}_VEICULO_TOP_${stage}`},
+}
+
 const serverlessConfiguration: AWS = {
-  service: projectName,
+  service: service.name.toLowerCase(),
   frameworkVersion: '3',
   plugins: ['serverless-esbuild', 'serverless-offline', 'serverless-dynamodb-local'],
   provider: {
     name: 'aws',
-    region: 'sa-east-1',
+    httpApi: {
+      cors: { allowedOrigins: ['*'], allowedHeaders: ['Content-Type', 'Authorization'], allowedMethods: ['POST'], /*allowCredentials: true*/ },
+      authorizers: {
+        auth: {
+          type: 'jwt',
+          identitySource: '$request.header.Authorization',
+          issuerUrl: `https://cognito-idp.sa-east-1.amazonaws.com/${cognitoPoolId}`,
+          audience: ['7joob4d238qo57i2gdmnkpava2']
+        }
+      }
+    },
+    region,
     runtime: 'nodejs18.x',
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
     },
     environment: {
+      tblVeiculo  : tables.Veiculo.name,
+      topicVeiculo: topics.Veiculo.name,
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
       ... Object.keys(tables).reduce((obj, k)=> { obj[`tbl${k}`]  = tables[k].name; return obj }, {}),
@@ -52,7 +72,16 @@ const serverlessConfiguration: AWS = {
               "dynamodb:Update*",
               "dynamodb:PutItem"
             ],
-            Resource: Object.keys(tables).map( k => ({"Fn::GetAtt": [tables[k].key, 'Arn']}) )
+            Resource: Object.keys(tables).reduce((itm, k)=> { itm.push(`table/${tables[k].name}`); tables[k].index?.forEach( i => itm.push(`table/${tables[k].name}/index/${tables[k].name}${i}`)) ; return itm }, []).map( m=> `arn:aws:dynamodb:${region}:${accountId}:${m}`)
+          },
+          {
+            Effect: "Allow", 
+            Action: [
+              "sns:Publish",
+              "sns:Subscribe",
+              "sns:GetTopicAttributes",
+            ],
+            Resource: Object.keys(topics).map( k => `arn:aws:sns:${region}:${accountId}:${topics[k].name}`) 
           },
         ]
       }
@@ -60,7 +89,7 @@ const serverlessConfiguration: AWS = {
   },
   // import the function via paths
   functions: { 
-    graphqlHandler
+    authMiddleware, graphqlHandler, ...restHandler 
   },
   package: { individually: true },
   
@@ -74,32 +103,6 @@ const serverlessConfiguration: AWS = {
         seed: true
       }
     }, 
-
-    appSync:{
-      schema: '',
-      userPoolConfig: {
-        awsRegion: 'sa-east-1',
-        defaultAction: 'deny',
-        userPoolId: 'sa-east-1_28VaLNwAP',
-        mappingTemplates: [
-          {
-            dataSource: 'FABRICANTE',
-            type: 'Query',
-            field: 'listarFabricantes',
-
-            description: 'Lista de fabricantes',
-            config:{ functionName: 'ListarFabricantes' }
-          }
-        ],
-        dataSources: [
-          { 
-            type: 'AWS_LAMBDA',
-            name: 'Fabricante',
-            functionName: 'graphqlHandler' 
-          }
-        ]
-      }
-    },
 
     esbuild: {
       bundle: true,
@@ -141,6 +144,12 @@ const serverlessConfiguration: AWS = {
             }
           ],
           BillingMode: 'PAY_PER_REQUEST'
+        }
+      },
+      [topics.Veiculo.key]: {
+        Type: 'AWS::SNS::Topic',
+        Properties: {
+          TopicName: topics.Veiculo.name
         }
       }
     }

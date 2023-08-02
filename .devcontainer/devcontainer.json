@@ -2,6 +2,7 @@
     "name": "VEICULO",
     "image": "node:16",
 	"postCreateCommand": "/bin/bash .devcontainer/install.sh",
+	"runArgs": ["--name", "src_veiculo"],
 	"customizations": {
 		"vscode": {
 			"extensions": [

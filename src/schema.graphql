@@ -1,3 +1,4 @@
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key", "@shareable"])
 
 type Fabricante
 {
@@ -19,34 +20,44 @@ type Modelo
     Fabricante: Fabricante
 }
 
-type Veiculo
+
+
+type Multa @key(fields: "Id", resolvable: false) 
+{
+    "Identificador da multa"
+    Id:        String,
+}
+
+
+type Veiculo @key(fields: "Placa")
 {
     "Placa do veículo"
     Placa:          String!,
-    "Identificador do proprietário do veículo"
-    Proprietario:   Cidadao,
     "Chassis do veículo"
     Chassis:        String,
     "Ano de fabricação"
     Ano:            Int,
+    "Cor predominante"
+    Cor:            String,
     "Fabricante do veículo"
     Fabricante:     Fabricante,
     "Modelo do veículo"
     Modelo:         Modelo,
-    "Cor predominante"
-    Cor:            String,
+    "Proprietário do veículo"
+    Proprietario:   Cidadao,
+    
 }
 
-
-type Cidadao
+extend type Cidadao @key(fields: "IdCidadao")
 {
-    "Identificador do proprietário do veículo"
     IdCidadao: String
+    "Lista de veículos do cidadão"
+    Veiculos: [Veiculo!]
 }
 
 type Query{
     "Lista todos os fabricantes"
-    fabricantes: [Fabricante],
+    fabricantes(Nome:String): [Fabricante],
     "Obtem os dados do fabricante"
     fabricante(Id: String):  Fabricante,
     

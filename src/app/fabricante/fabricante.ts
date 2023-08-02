@@ -1,14 +1,14 @@
 import {fabricantes} from '../modelos.json'; 
-import { IPK } from './models';
+import { IData, IFilter, IPK } from './models';
 
 export class Fabricante
 {
     
-    async get(pk:IPK){
-        return fabricantes.find( m=> m.Id === pk.Id)
+    async get(pk:IPK) : Promise<IData>{
+        return new Promise( res => res( fabricantes.find( m=> m.Id === pk.Id) ) ) 
     }
 
-    async list(){
-        return fabricantes
+    async list(filter:IFilter): Promise<IData[]>{
+        return new Promise( res => res( fabricantes.filter( f=> f.Nome.startsWith(filter?.Nome || '') ) ) )
     }
 }
