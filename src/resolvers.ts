@@ -10,7 +10,7 @@ const resolvers = {
     Veiculo: {
         Fabricante: ({ IdFabricante }, _, {dataSources}) => dataSources.app.getFabricante({ Id: IdFabricante }),
         Modelo: ({ IdModelo }, _, {dataSources}) => dataSources.app.getModelo({ Id: IdModelo }),
-        Proprietario: ({ IdProprietario }) => ({ __typename: "Cidadao", IdCidadao: IdProprietario }),
+        Proprietario: ({ IdProprietario }) => ({ __typename: "Cidadao", IdCidadao: IdProprietario }) 
     },
     
     Cidadao: {

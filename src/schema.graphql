@@ -1,4 +1,4 @@
-extend schema @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key", "@shareable"])
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key", "@external"])
 
 type Fabricante
 {
@@ -43,14 +43,13 @@ type Veiculo @key(fields: "Placa")
     Fabricante:     Fabricante,
     "Modelo do veículo"
     Modelo:         Modelo,
-    "Proprietário do veículo"
-    Proprietario:   Cidadao,
-    
+
+    Proprietario:  Cidadao, 
 }
 
 extend type Cidadao @key(fields: "IdCidadao")
 {
-    IdCidadao: String
+    IdCidadao: String @external,
     "Lista de veículos do cidadão"
     Veiculos: [Veiculo!]
 }
