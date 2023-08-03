@@ -26,7 +26,7 @@ export const middleware    = async(event, _, callback)=> {
   else
   {
     try {
-      const cgn:IIdentity = new Cognito(['https://cognito-idp.sa-east-1.amazonaws.com/sa-east-1_28VaLNwAP'])
+      const cgn:IIdentity = new Cognito([`https://cognito-idp.sa-east-1.amazonaws.com/${process.env.cognitoPoolId}`])
       const payload = await cgn.validateUser(tokenValue);
       callback(null, generatePolicy(payload.sub, 'Allow', event.methodArn, payload));
     } 

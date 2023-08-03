@@ -7,7 +7,7 @@ export const authMiddleware = {
   timeout: 3
 }
 
-const auth = {};//{authorizer: {name: 'authMiddleware'}}
+const auth = {}//{ authorizer: { name: "authMiddleware" } };
 
 export const graphqlHandler = {
   handler: `${handlerPath(__dirname)}/handlers/graphql.server`,

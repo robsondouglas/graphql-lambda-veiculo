@@ -16,7 +16,7 @@ const accountId = 813397945060;
 const service   = {alias: "VEI", name: 'Veiculo' }
 const stage     =  args('stage', 'dev').toUpperCase();
 const region    = "sa-east-1";
-const cognitoPoolId = 'sa-east-1_28VaLNwAP';
+const cognitoPoolId = 'sa-east-1_lK1q4kfO6';
 
 const tables    =   {
   Veiculo: {key: 'tblVeiculo', name: `${service.alias}_VEICULO_TBL_${stage}`, index: ['_GSI1']},
@@ -26,6 +26,12 @@ const topics = {
   Veiculo: {key: 'topVeiculo', name: `${service.alias}_VEICULO_TOP_${stage}`},
 }
 
+const Apps = {
+  Agente: '1smc1s7c4ktbre5a5ijqcuskkq',
+  Admin: '3qtrdb222hhnc5a1d36qsjmpkb',
+  Cidadao: 'bbvm4gnh4gllju7f4bdepdioh'
+}
+
 const serverlessConfiguration: AWS = {
   service: service.name.toLowerCase(),
   frameworkVersion: '3',
@@ -33,13 +39,13 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: 'aws',
     httpApi: {
-      cors: { allowedOrigins: ['*'], allowedHeaders: ['Content-Type', 'Authorization'], allowedMethods: ['POST'], /*allowCredentials: true*/ },
+      cors: { allowedOrigins: ['*'], allowedHeaders: ['Content-Type', 'Authorization'], allowedMethods: ['POST', 'GET'], /*allowCredentials: true*/ },
       authorizers: {
-        auth: {
+        authMiddleware: {
           type: 'jwt',
           identitySource: '$request.header.Authorization',
           issuerUrl: `https://cognito-idp.sa-east-1.amazonaws.com/${cognitoPoolId}`,
-          audience: ['7joob4d238qo57i2gdmnkpava2']
+          audience: [Apps.Admin, Apps.Agente, Apps.Cidadao]
         }
       }
     },
@@ -52,6 +58,8 @@ const serverlessConfiguration: AWS = {
     environment: {
       tblVeiculo  : tables.Veiculo.name,
       topicVeiculo: topics.Veiculo.name,
+      cognitoPoolId,
+      appCidadao: Apps.Cidadao,
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
       ... Object.keys(tables).reduce((obj, k)=> { obj[`tbl${k}`]  = tables[k].name; return obj }, {}),

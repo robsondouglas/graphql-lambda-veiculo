@@ -9,8 +9,14 @@ export default class Cognito implements IIdentity{
     }
 
     async validateUser(token: string): Promise<any> {
+      
+      if(!token)
+      { return null }
 
-      const [_, data] = token.split('.');  
+      const [_, data] = token?.split('.');  
+
+      if(!data)
+      { return null }
 
       const payload = JSON.parse( Buffer.from(data, 'base64').toString('ascii') )
       
