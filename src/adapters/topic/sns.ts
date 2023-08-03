@@ -10,7 +10,7 @@ export class SNS implements ITopic {
             Message: JSON.stringify(data),
             MessageAttributes: { // MessageAttributeMap
                 "ACTION": { 
-                    DataType: "STRING_VALUE", 
+                    DataType: "String", 
                     StringValue: action
                 },
             }, 

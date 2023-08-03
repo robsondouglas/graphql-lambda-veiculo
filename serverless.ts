@@ -57,7 +57,7 @@ const serverlessConfiguration: AWS = {
     },
     environment: {
       tblVeiculo  : tables.Veiculo.name,
-      topicVeiculo: topics.Veiculo.name,
+      topicVeiculo: `arn:aws:sns:${region}:${accountId}:${topics.Veiculo.name}`, 
       cognitoPoolId,
       appCidadao: Apps.Cidadao,
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
