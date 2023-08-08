@@ -29,6 +29,7 @@ type Multa @key(fields: "Id", resolvable: false)
 }
 
 
+"Reresenta os dados de um veículo"
 type Veiculo @key(fields: "Placa")
 {
     "Placa do veículo"
@@ -78,13 +79,14 @@ type Mutation{
     delVeiculo(Placa:String):Boolean,
 }
 
+"Dados necessários para incluir um novo veículo"
 input VeiculoInput
 {
     "Placa do carro padrão Brasil 3 letras ou Mercosul"
     Placa:           String,
     "Identificador do proprietário do veículo"
     IdProprietario:  String,
-    "Chassis do veículo, string aleatória com 17 caracteres, sem validação de formato"
+    "Chassis do veículo, string aleatória com 17 caracteres"
     Chassis:         String,
     "Ano de fabricação"
     Ano:             Int,
